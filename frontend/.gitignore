@@ -1,0 +1,190 @@
+# Dependencies
+node_modules/
+node_modules/**
+
+# Build outputs
+dist/
+build/
+
+# Vite cache
+.vite
+.vite_cache/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Editor directories and files
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+*.lnk
+
+# Bundler cache
+.cache/
+.parcel-cache/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# ESLint cache
+.eslintcache
+
+# Prettier cache
+.prettier-cache
+
+# Test coverage
+coverage/
+*.lcov
+
+# Optional npm cache directory
+.npm
+
+# Yarn error logs
+yarn-error.log
+
+# Storybook files
+.storybook/
+
+# Husky
+.husky/_
+
+# Temporary files
+tmp/
+temp/
+
+# Output of 'npm pack'
+*.tgz
+
+# SASS cache
+.sass-cache/
+
+# Python cache (if any Python scripts)
+__pycache__/
+
+# Mac files
+*.DS_Store
+
+# Hidden files
+*.swp
+.*.swp
+
+# Lock files
+package-lock.json
+pnpm-lock.yaml
+
+# Mac System files
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+Thumbs.db
+
+# Firebase cache
+.firebase/
+
+# Netlify cache
+.netlify/
+
+# Amplify cache
+amplify/
+
+# Local AWS SAM files
+.local-sam/
+
+# IDE specific files
+*.iml
+*.ipr
+*.iws
+
+# Prettier log
+prettier.log
+
+# NPM debug files
+npm-debug.log
+npm-debug.log.*
+
+# Serverless files
+.serverless/
+
+# Next.js build directory
+.next/
+
+# Static Export (Next.js)
+out/
+
+# Tailwind CSS generated files
+tailwind.css
+tailwind.css.map
+
+# Tailwind config
+tailwind.config.js
+
+# PostCSS config
+postcss.config.js
+
+# Docker files
+docker-compose.yml
+Dockerfile
+
+# Custom environment files
+.envrc
+.env.bak
+.env.old
+
+# Parcel cache (if applicable)
+.cache/
+
+# SvelteKit build
+.svelte-kit/
+
+# Gatsby files
+.cache/
+public/
+
+# Remix files
+.build/
+
+# Firebase files
+firebase-debug.log
+
+# Angular cache
+.angular/cache/
+
+# Reporting tools
+cucumber-report-html/
+
+# Cypress files
+.cypress_cache/
+cypress/videos/
+cypress/screenshots/
+
+# IntelliJ
+*.ipr
+*.iws
+.idea/
+
+# Vim swap files
+*.swp
+.*.swp

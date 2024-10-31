@@ -1,0 +1,6 @@
+# Ignore build files
+build/
+dist/
+
+# Ignore specific files
+src/legacy/**/*.ts

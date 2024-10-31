@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Manage your finances with a beautifully futuristic interface."
+    />
+    <meta
+      name="keywords"
+      content="finance, budgeting, investments, goals, money management, personal finance"
+    />
+    <meta name="author" content="Abbott Ashiofu" />
+
+    <!-- Open Graph Meta Tags for Social Media -->
+    <meta property="og:title" content="Eniuche Financial Application" />
+    <meta
+      property="og:description"
+      content="Manage your finances with a beautifully futuristic interface."
+    />
+    <meta property="og:image" content="/images/social-preview.png" />
+    <meta property="og:url" content="https://eniuche.com" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Eniuche Financial Application" />
+    <meta
+      name="twitter:description"
+      content="Manage your finances with a beautifully futuristic interface."
+    />
+    <meta name="twitter:image" content="/images/social-preview.png" />
+
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "WebApplication",
+        "name": "Eniuche Financial Application",
+        "url": "https://eniuche.com",
+        "description": "Manage your finances with a beautifully futuristic interface.",
+        "author": {
+          "@type": "Person",
+          "name": "Abbott Ashiofu"
+        }
+      }
+    </script>
+
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" />
+
+    <!-- Title -->
+    <title>Eniuche Financial Application</title>
+    
+    <!-- Fonts and Icons -->  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
+
+    <!-- Styles (Tailwind CSS will be injected by Vite) -->
+  </head>
+  <body
+    class="bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white min-h-screen font-sans"
+  >
+    <!-- Preloader Animation with ARIA Role -->
+    <div
+      id="preloader"
+      class="fixed inset-0 flex items-center justify-center bg-black z-50"
+      role="status"
+      aria-busy="true"
+    >
+      <div class="loader">
+        <!-- Futuristic Loader Animation -->
+        <div
+          class="spinner border-t-4 border-b-4 border-white rounded-full w-12 h-12 animate-spin"
+        ></div>
+      </div>
+    </div>
+
+    <!-- App Root -->
+    <div id="root"></div>
+
+    <!-- Background Elements -->
+    <div class="absolute top-0 left-0 w-full h-full overflow-hidden">
+      <!-- Animated Background Canvas -->
+      <canvas id="background-canvas"></canvas>
+    </div>
+
+    <!-- Scripts -->
+    <!-- Include the main script file -->
+    <script type="module" src="frontend/src/index.tsx"></script>
+
+    <!-- Preloader Removal Script -->
+    <script>
+      window.addEventListener('load', () => {
+        const preloader = document.getElementById('preloader');
+        if (preloader) {
+          preloader.style.display = 'none';
+          document.body.setAttribute('aria-busy', 'false');
+        }
+      });
+    </script>
+
+    <!-- Optional Particle Background Script -->
+    <script>
+      const canvas = document.getElementById('background-canvas');
+      const ctx = canvas.getContext('2d');
+      const particles = Array(100)
+        .fill()
+        .map(() => ({
+          x: Math.random() * window.innerWidth,
+          y: Math.random() * window.innerHeight,
+          dx: Math.random() - 0.5,
+          dy: Math.random() - 0.5,
+        }));
+
+      const renderParticles = () => {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particles.forEach(p => {
+          p.x += p.dx;
+          p.y += p.dy;
+          if (p.x < 0 || p.x > window.innerWidth) p.dx *= -1;
+          if (p.y < 0 || p.y > window.innerHeight) p.dy *= -1;
+          ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
+          ctx.fill();
+        });
+      };
+
+      window.addEventListener('resize', () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      });
+
+      setInterval(renderParticles, 1000 / 30);
+    </script>
+  </body>
+</html>
